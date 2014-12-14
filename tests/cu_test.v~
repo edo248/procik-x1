@@ -126,24 +126,8 @@ initial begin
 			$display($time," ST_HALT [OK]");
 		else 
 			$display($time," ST_HALT [FAIL] %b", dut_cu.state);
-
-		////////////////////////
-		ir_data= 16'h210E;  // STORE R1 A14				
-		$display("ir_data= 16'h210E // STORE R1 A14");
-		
-		#100			
-		if( dut_cu.state == `ST_HALT ) 
-			$display($time," ST_HALT [OK]");
-		else 
-			$display($time," ST_HALT [FAIL] %b", dut_cu.state);
-			
-		#400			
-		if( dut_cu.state == `ST_HALT ) 
-			$display($time," ST_HALT [OK]");
-		else 
-			$display($time," ST_HALT [FAIL] %b", dut_cu.state);		
-																		
-		#1 $finish();
+																
+		#1600 $finish();
 		$dumpoff();
 	end
 

@@ -3,7 +3,7 @@ input clock,reset;
 
 wire [0:7] addr_bus_out;
 wire [0:7] addr_to_bus;
-wire [0:1] adress_select;
+wire [0:1] address_select;
 wire [0:7] ip_data;
 wire [0:15] data_bus_out;
 wire [0:15] data_bus_in1;
@@ -19,7 +19,7 @@ register  #(8)  IP  (.Out(ip_data), .Reset(reset_internal),
    	        /*.In(0), .Load(0)*/
 	    );
 mux1x8 addr_bus (
-      .select({1'b0,adress_select}),
+      .select({1'b0,address_select}),
       .data1(ip_data),
       .data2(cu_addr_out),
       .data3(8'd0),
@@ -47,11 +47,11 @@ register #(16)  IR  (
        );
 
 cu (    .clk(clock), .reset(reset), .ir_data(ir_data),
-	.data_select(data_select), .adress_select(adress_select),
+	.data_select(data_select), .address_select(address_select),
 	.sram_en(sram_en), .write_en(write_en),
 	.ir_load(ir_load), .gpr_load(gpr_load), 
 	.ip_increment(ip_inc),
-	.ra(ra), .adress(cu_addr_out), 
+	.ra(ra), .address(cu_addr_out), 
 	.reset_internal(reset_internal) 	   
    );
 

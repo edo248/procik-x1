@@ -1,0 +1,10 @@
+
+`define START 		0
+`define IF1  		1
+`define IF2  		10
+`define DECODE 		20
+`define LOAD1 		30
+`define LOAD2		40
+`define ICREMENT	50
+`define STORE 		60
+`define HALT		70
