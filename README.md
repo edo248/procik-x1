@@ -1,7 +1,7 @@
 procik-x1
 =========
 
-A Simple Single-stage processor
+A Simple Single-stage processor with LOAD/STORE/HALT implemented. Can be agood start to learn processor design and expansion of ISA by addition of ALU.
 
 Simulate Control Unit (CU)
 ---------------------------
