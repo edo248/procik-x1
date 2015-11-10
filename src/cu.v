@@ -72,7 +72,7 @@ always @(posedge clk or posedge reset)
 		end  
 
     `ST_LOAD1:	begin
-			sram_en=0; 
+			sram_en=MEM_ENABLE; 
 			write_en = MEM_READ; 
 			address_select= ABUS_CU; 
 			data_select = DBUS_MEM;	 
@@ -81,7 +81,7 @@ always @(posedge clk or posedge reset)
 		  
     `ST_LOAD2:	begin
 			gpr_load =1; 
-			sram_en=1;  
+			sram_en=MEM_DISABLE;  
 			state = `ST_ICREMENT;	
 		end  
 		
